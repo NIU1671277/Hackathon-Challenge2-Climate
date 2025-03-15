@@ -5,6 +5,38 @@ document.addEventListener('DOMContentLoaded', async () => {
     const currentWind = document.getElementById('current-wind');
     const forecastDays = document.querySelector('.forecast-days');
 
+    // Mapeo de weather_code a iconos
+    const weatherIcons = {
+        0: "☀️", // Clear sky
+        1: "🌤️", // Mainly clear
+        2: "⛅", // Partly cloudy
+        3: "☁️", // Overcast
+        45: "🌫️", // Fog
+        48: "🌫️", // Depositing rime fog
+        51: "🌧️", // Light drizzle
+        53: "🌧️", // Moderate drizzle
+        55: "🌧️", // Dense drizzle
+        56: "🌧️", // Light freezing drizzle
+        57: "🌧️", // Dense freezing drizzle
+        61: "🌧️", // Slight rain
+        63: "🌧️", // Moderate rain
+        65: "🌧️", // Heavy rain
+        66: "🌧️", // Light freezing rain
+        67: "🌧️", // Heavy freezing rain
+        71: "🌨️", // Slight snow fall
+        73: "🌨️", // Moderate snow fall
+        75: "🌨️", // Heavy snow fall
+        77: "🌨️", // Snow grains
+        80: "🌧️", // Slight rain showers
+        81: "🌧️", // Moderate rain showers
+        82: "🌧️", // Violent rain showers
+        85: "🌨️", // Slight snow showers
+        86: "🌨️", // Heavy snow showers
+        95: "⛈️", // Thunderstorm
+        96: "⛈️", // Thunderstorm with slight hail
+        99: "⛈️", // Thunderstorm with heavy hail
+    };
+
     try {
         const response = await fetch('/tiempo');
         if (!response.ok) {
@@ -13,6 +45,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const data = await response.json();
         const currentWeather = data[0];
+
+        /// Añadir el icono del tiempo actual
+        const currentWeatherIcon = document.getElementById('current-weather-icon');
+        currentWeatherIcon.textContent = weatherIcons[currentWeather.weather_code] || ""; // Usar "❓" si el código no está en el mapeo
 
         // Update current weather
         currentTemp.textContent = currentWeather.temperature_2m.toFixed(1);
@@ -33,6 +69,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 forecastDay.className = 'forecast-day';
                 forecastDay.innerHTML = `
                     <p><strong>${formattedDate}</strong></p>
+                    <p class="weather_icon">${weatherIcons[day.weather_code] || ""}</p>
                     <p>${day.temperature_2m.toFixed(1)}°C</p>
                 `;
                 forecastDays.appendChild(forecastDay);

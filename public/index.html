@@ -38,28 +38,33 @@
         </div>
     </header>
     <div class="tab" id="tiempo">
-        <section class="info">
+        <section class="info">  
             <div class="alert-banner">
                 <img src="img/fire.svg" alt="Fire Icon">
                 <span>¡Alerta por incendio!</span>
             </div>
             <div class="weather" id="weather">
                 <div class="current-weather">
-                    <h3>Current Weather</h3>
+                    <h3>Tiempo actual</h3>
                     <div class="weather-info">
-                        <p><strong>Temperature:</strong> <span id="current-temp"></span>°C</p>
-                        <p><strong>Humidity:</strong> <span id="current-humidity"></span>%</p>
-                        <p><strong>Precipitation:</strong> <span id="current-precipitation"></span>%</p>
-                        <p><strong>Wind:</strong> <span id="current-wind"></span> km/h</p>
+                        <div class="weather-icon-temp">
+                            <span id="current-weather-icon"></span>
+                            <span id="current-temp"></span>°C
+                        </div>
+                        <ul class="weather-details">
+                            <li><strong>Humedad:</strong> <span id="current-humidity"></span>%</li>
+                            <li><strong>Precipitación:</strong> <span id="current-precipitation"></span>%</li>
+                            <li><strong>Viento:</strong> <span id="current-wind"></span> km/h</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="forecast">
-                    <h3>7-Day Forecast</h3>
                     <div class="forecast-days">
                         <!-- Forecast days will be populated by JavaScript -->
                     </div>
                 </div>
             </div>
+            <hr style="width:100%;text-align:left;margin-left:0">
             <div class="telef">
                 <h3>Registra tu teléfono para alertas</h3>
                 <form action="/addNum" method="post">
