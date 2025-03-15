@@ -1,0 +1,28 @@
+{
+  "name": "hackathon-challenge-2-climate",
+  "version": "1.0.0",
+  "description": "Hackathon web server",
+  "keywords": [
+    "hackathon",
+    "climate",
+    "express"
+  ],
+  "homepage": "https://github.com/NIU1671277/Hackathon-Challenge2-Climate#readme",
+  "bugs": {
+    "url": "https://github.com/NIU1671277/Hackathon-Challenge2-Climate/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NIU1671277/Hackathon-Challenge2-Climate.git"
+  },
+  "license": "ISC",
+  "author": "Jan, Albert, Natàlia, Arnau",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
