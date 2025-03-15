@@ -34,8 +34,8 @@ header {
     height: 10%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     border-radius: 1em 1em 1em 1em;
-    margin-right: 1.4em;
-    margin-left: 1.4em;
+    margin-right: 1.55em;
+    margin-left: 1.55em;
     margin-top: 1em;
     margin-bottom: 0em;
 
@@ -135,6 +135,7 @@ input {
     align-items: center;
     align-content: center;
     width: 96%;
+    height: 10%;
     border-radius: 0.7em 0.7em 0.7em 0.7em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
 }
