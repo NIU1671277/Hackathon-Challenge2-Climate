@@ -60,10 +60,10 @@ info.addTo(map);
 // Definir escala de colores basada en temperatura
 function getColor(temp) {
     return temp > 30 ? '#ff0000' :  // Rojo para temperaturas altas
-           temp > 25 ? '#ff7800' :  // Naranja
-           temp > 20 ? '#ffcc00' :  // Amarillo
-           temp > 15 ? '#33cc33' :  // Verde
-                        '#3399ff';  // Azul para temperaturas bajas
+        temp > 25 ? '#ff7800' :  // Naranja
+            temp > 20 ? '#ffcc00' :  // Amarillo
+                temp > 15 ? '#33cc33' :  // Verde
+                    '#3399ff';  // Azul para temperaturas bajas
 }
 
 // Crear grupos de capas
@@ -253,7 +253,7 @@ const refugios = [
 ];
 
 // Añadir marcadores de refugios al grupo de capas
-refugios.forEach(({lat, lng})=>{
+refugios.forEach(({ lat, lng }) => {
     L.marker([lat, lng], {
         icon: L.icon({
             iconUrl: 'img/refugios.png', // Ruta de la imagen
@@ -370,6 +370,8 @@ legend.onAdd = function (map) {
     div.style.backgroundColor = 'white';
     div.style.padding = '10px';
     div.style.borderRadius = '10px';
+    div.style.width = '10%';
+    div.style.textAlign = 'center';
     div.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.2)';
     return div;
 };

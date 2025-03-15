@@ -2,17 +2,31 @@
     font-family: "Funnel Display", sans-serif;
 }
 
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 50% 200%;
+    }
+}
+
 body {
     margin: 0;
-    background-color: rgb(79, 79, 79);
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background-color: rgb(206, 206, 206);
+    /* background-image: url('../img/fire_bg.svg');
+    background-size: 5em 5em;
+    background-repeat: repeat;
+    animation: moveBackground 100s linear infinite; */
 }
 
 header {
     color: white;
-    background: #ff7700;
+    background: #084558;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,8 +34,8 @@ header {
     height: 10%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     border-radius: 1em 1em 1em 1em;
-    margin-right: 1.4em;
-    margin-left: 1.4em;
+    margin-right: 1.55em;
+    margin-left: 1.55em;
     margin-top: 1em;
     margin-bottom: 0em;
 
@@ -40,7 +54,7 @@ header .menu {
 
 header .menu * {
     color: rgb(255, 255, 255);
-    background-color: #ff7700;
+    background-color: #084558;
     height: 90%;
     font-size: large;
     padding: 0 2em;
@@ -50,7 +64,7 @@ header .menu * {
 }
 
 header button:hover {
-    background: #ff9c3f;
+    background: #125569;
 }
 
 #tiempo {
@@ -62,7 +76,8 @@ header button:hover {
     height: 90%;
 }
 
-.info, .chat {
+.info,
+.chat {
     background-color: rgba(255, 255, 255, 0.845);
     width: 65%;
     height: 95%;
@@ -75,9 +90,13 @@ header button:hover {
 
 .chat {
     width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+}
+
+.textchat {
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 94%;
+
 }
 
 .textchat {
@@ -146,12 +165,13 @@ header button:hover {
     display: flex;
     flex-direction: row;
     color: white;
-    background-color: red;
+    background-color: #c02613;
     text-align: center;
     justify-content: center;
     align-items: center;
     align-content: center;
     width: 96%;
+    height: 10%;
     border-radius: 0.7em 0.7em 0.7em 0.7em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
 }
@@ -176,7 +196,8 @@ header button:hover {
     width: 100%;
 }
 
-#phone, #ciutat{
+#phone,
+#ciutat {
     border: solid 1px;
     border-radius: 3px;
     height: 20px;
@@ -238,6 +259,6 @@ header button:hover {
     column-gap: 15px;
 }
 
-#form{
+#form {
     gap: 20px;
 }
