@@ -1,6 +1,6 @@
 // Coordenadas aproximadas para centrar el mapa en Latinoamérica
-const lat = -17.43996162404167;
-const lng = -69.01352358001927;
+const lat = -6.170733112573795;
+const lng = -70.38501271258028;
 const zoomLevel = 4;
 
 // Inicializar el mapa
