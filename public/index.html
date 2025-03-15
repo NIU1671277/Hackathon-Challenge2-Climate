@@ -11,14 +11,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="css/stylesmap.css">
     <script defer src="js/menu.js"></script>
-    <script src="js/functions.js"></script>
 </head>
 <body>
     <header>
         <h1>Latamergence</h1>
         <div class="menu">
-            <button onclick="showTab('tiempo')">Tiempo</button>
-            <button onclick="showTab('map')">Mapa</button>
+            <button onclick="showTab('tiempo', 'flex')">Tiempo</button>
+            <button onclick="showTab('maptab','block')">Mapa</button>
         </div>
     </header>
     <div class="tab" id="tiempo">
@@ -50,8 +49,8 @@
         </section>
     </div>
 
-    <div class="tab" id="maptab" style="display: none;">
-        <div class="container-llista">
+    <div class="tab" id="maptab" style="display: block;">
+        <!-- <div class="container-llista">
         <select id="country-select">
 
             <option value="">Selecciona un país</option>
@@ -77,7 +76,7 @@
             <option value="Venezuela">Venezuela</option>
             
         </select>
-        </div>
+        </div> -->
 
         <div id="map"></div>
 
@@ -88,41 +87,3 @@
     </div>
 </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="weather-widget">
-        <div class="overview">
-            <img src="" alt="icon">
-            <h1 id="celsius">0 ºC</h1>
-            <ul>
-                <li>Precipitación: 0%</li>
-                <li>Humedad: 0%</li>
-                <li>Viento: 0 km/h</li>
-            </ul>
-            <div>
-                <h2>Tiempo</h2>
-                <h3>Sabado 00:00</h3>
-            </div>
-        </div>
-        <div>
-            <div id="options">
-                <p>Temperatura</p>
-                <p>Precipitación</p>
-                <p>Viento</p>
-            </div>
-            <div id="data_options"></div>
-        </div>
-        <div class="hour-day">
-
-        </div>
-    </div>
-</body>
-</html> -->
