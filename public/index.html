@@ -3,6 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latam Weather</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/stylesmap.css">
+    <script defer src="js/menu.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Latamergence</h1>
+        <div class="menu">
+            <button onclick="showTab('tiempo')">Tiempo</button>
+            <button onclick="showTab('map')">Mapa</button>
+        </div>
+    </header>
+    <div class="tab" id="tiempo">
+        <section class="info">
+            <div class="alert-banner">
+                <img src="img/fire.svg" alt="Fire Icon">
+                <span>¡Alerta por incendio!</span>
+            </div>
+            <div class="weather">
+                <p>Previsión meteorológica</p>
+            </div>
+            <div class="telef">
+                <h3>Registra tu teléfono para alertas</h3>
+                <form>
+                    <label for="phone">Teléfono:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Ingrese su número de teléfono" required>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+        <section class="chat">
+            <div class="textchat">
+                <!-- Chat content here -->
+            </div>
+            <div class="barraChat">
+                <input class="textuser" type="text" name="query" id="query">
+                <img src="img/avionet.png" alt="Chat Icon">
+            </div>
+        </section>
+    </div>
+
+    <div class="tab" id="maptab" style="display: none;">
+        <div class="container-llista">
+        <select id="country-select">
+
+            <option value="">Selecciona un país</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Bolivia">Bolivia</option>
+            <option value="Brazil">Brasil</option>
+            <option value="Chile">Chile</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Costa Rica">Costa Rica</option>
+            <option value="Cuba">Cuba</option>
+            <option value="Dominican Republic">República Dominicana</option>
+            <option value="Ecuador">Ecuador</option>
+            <option value="El Salvador">El Salvador</option>
+            <option value="Guatemala">Guatemala</option>
+            <option value="Haiti">Haití</option>
+            <option value="Honduras">Honduras</option>
+            <option value="Mexico">México</option>
+            <option value="Nicaragua">Nicaragua</option>
+            <option value="Panama">Panamá</option>
+            <option value="Paraguay">Paraguay</option>
+            <option value="Peru">Perú</option>
+            <option value="Uruguay">Uruguay</option>
+            <option value="Venezuela">Venezuela</option>
+            
+        </select>
+        </div>
+
+        <div id="map"></div>
+
+        <script src="https://cdn.jsdelivr.net/npm/leaflet/dist/leaflet.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"></script>
+        <script src="js/script.js"></script>
+
+    </div>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -34,4 +124,4 @@
         </div>
     </div>
 </body>
-</html>
+</html> -->
