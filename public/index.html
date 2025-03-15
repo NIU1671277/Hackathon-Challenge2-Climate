@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,33 +18,91 @@
         <button onclick="showTab('map')">Mapa</button>
         </div>
     </header>
-    <div class="zona-medio">
-    <section class="info">
-        <div class="alert-banner">
-            <img src="img/fire.svg" alt="Fire Icon">
-            <p>¡Alerta por incendio!</p>
+    <div class="tab" id="tiempo">
+        <section class="info">
+            <div class="alert-banner">
+                <img src="img/fire.svg" alt="Fire Icon">
+                <span>¡Alerta por incendio!</span>
+            </div>
+            <div class="weather">
+                <p>Previsión meteorológica</p>
+            </div>
+            <div class="telef">
+                <h3>Registra tu teléfono para alertas</h3>
+                <form>
+                    <label for="phone">Teléfono:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Ingrese su número de teléfono" required>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+        <section class="chat">
+            <div class="textchat">
+                
+            </div>
+            <div class="barraChat">
+                <input class="textuser"type="text" name="query" id="query">
+                <img src="img/avionet.png" alt="Fire Icon">
+            </div>
+                
+        </section>
+    </div>
+    <div class="tab" id="map"></div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latam Weather</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <script defer src="js/menu.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Latamergence</h1>
+        <div class="menu">
+            <button onclick="showTab('tiempo')">Tiempo</button>
+            <button onclick="showTab('map')">Mapa</button>
         </div>
-        <div class="weather">
-            <p>Previsión meteorológica</p>
-        </div>
-        <div>
-            <h3>Registra tu teléfono para alertas</h3>
-            <form>
-                <label for="phone">Teléfono:</label>
-                <input type="tel" id="phone" name="phone" placeholder="Ingrese su número de teléfono" required>
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-    </section>
-    <section class="chat">
-        <div class="textchat">
-            
-        </div>
-        <input class="textuser"type="text" name="query" id="query">
-        <img src="img/avionet.png" alt="Fire Icon">
-    </section>
+    </header>
+    <div class="tab" id="tiempo">
+        <section class="info">
+            <div class="alert-banner">
+                <img src="img/fire.svg" alt="Fire Icon">
+                <span>¡Alerta por incendio!</span>
+            </div>
+            <div class="weather">
+                <p>Previsión meteorológica</p>
+            </div>
+            <div class="telef">
+                <h3>Registra tu teléfono para alertas</h3>
+                <form>
+                    <label for="phone">Teléfono:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Ingrese su número de teléfono" required>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+        <section class="chat">
+            <div class="textchat">
+                <!-- Chat content here -->
+            </div>
+            <div class="barraChat">
+                <input class="textuser" type="text" name="query" id="query">
+                <img src="img/avionet.png" alt="Chat Icon">
+            </div>
+        </section>
+    </div>
+
+    <div class="tab" id="map" style="display: none;">
+        <!-- Aquí agregamos contenido para el mapa -->
+        <iframe id="mapFrame" src="https://www.openstreetmap.org/export/embed.html?bbox=-180%2C-90%2C180%2C90&layer=mapnik" allowfullscreen width="80%" height="500px"></iframe>
     </div>
 </body>
 </html>
-
-

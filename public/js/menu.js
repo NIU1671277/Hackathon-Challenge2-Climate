@@ -1,9 +1,19 @@
-// Función para cambiar entre las pestañas de "Tiempo" y "Mapa"
+// function showTab(tabId) {
+//     document.querySelectorAll('.tab').forEach(tab => {
+//         document.getElementById(tabId).classList.add('active')
+//     });
+//     document.getElementById(tabId).classList.add('active');
+// }
+// Funció per amagar o mostrar pestanyes
 function showTab(tabId) {
-    document.querySelectorAll('.content').forEach(tab => {
-        tab.classList.remove('active');
+    // Amaga totes les pestanyes
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.style.display = 'none'; // Amaga cada pestanya
     });
-    document.getElementById(tabId).classList.add('active');
+
+    // Mostra la pestanya seleccionada
+    const selectedTab = document.getElementById(tabId);
+    if (selectedTab) {
+        selectedTab.style.display = 'flex'; // Mostra la pestanya desitjada
+    }
 }
-
-
