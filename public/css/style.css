@@ -47,8 +47,7 @@ header button:hover {
     background: #789dc1;
 }
 
-#tiempo
-{
+#tiempo {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -70,38 +69,70 @@ header button:hover {
 
 .chat {
     width: 30%;
-}
-
-.textchat{
-    flex-direction: row;
-    justify-content: space-evenly;
-    height: 94%;
-    
-}
-
-.textuser{
-    flex: 1;
-}
-
-.barraChat{
     display: flex;
-    flex-direction: row;
-    width: 90%;
-    height: 6%;
-    padding: 5%;
-    gap: 5%;
-    
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.barraChat *{
+.textchat {
+    flex: 1;
+    overflow-y: auto; /* Hace que el contenido sea desplazable verticalmente */
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.chat-messages {
     height: 100%;
+    overflow-y: auto; /* Hace que los mensajes sean desplazables */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre mensajes */
 }
 
-input{
+.message {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+
+.user-message {
+    align-self: flex-end; /* Alinea a la derecha */
+    background-color: #007bff; /* Color de fondo para el usuario */
+    color: white; /* Color del texto */
+}
+
+.bot-message {
+    align-self: flex-start; /* Alinea a la izquierda */
+    background-color: #e1e1e1; /* Color de fondo para el bot */
+    color: black; /* Color del texto */
+}
+
+.barraChat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.textuser {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 20px;
-    border: solid black 2px;
-    padding: 0 10px;
-    font-size: 30;
+    font-size: 16px;
+}
+
+.barraChat img {
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
 }
 
 .alert-banner {
@@ -113,7 +144,7 @@ input{
     justify-content: center;
     align-items: center;
     align-content: center;
-    width: 100%
+    width: 100%;
 }
 
 .alert-banner img {
@@ -126,7 +157,7 @@ input{
     margin-left: 0.5em;
 }
 
-.weather{
+.weather {
     display: flex;
     flex-direction: row;
     height: 80%;
@@ -143,7 +174,7 @@ input{
     width: 100%;
 }
 
-#phone, #ciutat{
+#phone, #ciutat {
     height: 30px;
 }
 
@@ -188,4 +219,15 @@ input{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.typing-indicator {
+    font-style: italic;
+    color: #666; /* Color gris para el indicador */
+    animation: blink 1s infinite; /* Animación de parpadeo */
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
 }

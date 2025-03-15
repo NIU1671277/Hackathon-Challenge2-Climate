@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Here go the routing
 app.get('/tiempo', (req, res) => {
-    data = path.join(__dirname, 'misc/hourly_weather_data.json');
+    data = path.join(__dirname, 'data/hourly_weather_data.json');
     res.sendFile(data);
 });
 
@@ -58,6 +58,48 @@ app.post('/addNum', (req, res) => {
                 if (!res.headersSent) {
                     res.redirect('/?success=false');
                 }
+            }
+        } catch (error) {
+            console.error(`Parsing Error: ${error.message}`);
+            if (!res.headersSent) {
+                res.status(500).json({ error: "Failed to parse Python output" });
+            }
+        }
+    });
+});
+
+app.get('/chatbot/:query', (req, res) => {
+    const query = req.params['query'];
+
+    const pythonProcess = spawn("python", [path.join(__dirname, 'public/python/chatbot.py'), query]);
+    let resultData = "";
+
+    // Capturar la salida del script de Python
+    pythonProcess.stdout.on("data", (data) => {
+        resultData += data.toString();
+    });
+
+    // Capturar errores del script de Python
+    pythonProcess.stderr.on("data", (data) => {
+        console.error(`Python Error: ${data.toString()}`);
+        if (!res.headersSent) {
+            res.status(500).json({ error: "Python script error" });
+        }
+    });
+
+    // Manejar el cierre del proceso de Python
+    pythonProcess.on("close", () => {
+        if (!resultData.trim()) {
+            if (!res.headersSent) {
+                res.status(500).json({ error: "No data received from Python script" });
+            }
+            return;
+        }
+
+        try {
+            const result = JSON.parse(resultData);
+            if (!res.headersSent) {
+                res.json(result);
             }
         } catch (error) {
             console.error(`Parsing Error: ${error.message}`);

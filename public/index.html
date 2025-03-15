@@ -17,7 +17,7 @@
         // Leer el parámetro de consulta "success"
         const urlParams = new URLSearchParams(window.location.search);
         const success = urlParams.get('success');
-    
+
         // Mostrar una alerta basada en el valor del parámetro
         if (success === "true") {
             alert("Registro exitoso.");
@@ -73,11 +73,14 @@
         </section>
         <section class="chat">
             <div class="textchat">
-                <!-- Chat content here -->
+                <!-- Contenedor para los mensajes del chat -->
+                <div class="chat-messages" id="chat-messages">
+                    <!-- Los mensajes del chat se agregarán aquí dinámicamente -->
+                </div>
             </div>
             <div class="barraChat">
-                <input class="textuser" type="text" name="query" id="query">
-                <img src="img/avionet.png" alt="Chat Icon">
+                <input class="textuser" type="text" name="query" id="query" placeholder="Escribe tu mensaje...">
+                <img src="img/avionet.png" alt="Chat Icon" onclick="sendMessage()">
             </div>
         </section>
     </div>
@@ -89,5 +92,4 @@
         <script src="js/script.js"></script>
     </div>
 </body>
-
 </html>
