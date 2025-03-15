@@ -5,15 +5,11 @@
 //     document.getElementById(tabId).classList.add('active');
 // }
 // Funció per amagar o mostrar pestanyes
-function showTab(tabId) {
-    // Amaga totes les pestanyes
+function showTab(tabId, display) {
     document.querySelectorAll('.tab').forEach(tab => {
-        tab.style.display = 'none'; // Amaga cada pestanya
+        tab.style.display = 'none';
     });
 
-    // Mostra la pestanya seleccionada
-    const selectedTab = document.getElementById(tabId);
-    if (selectedTab) {
-        selectedTab.style.display = 'flex'; // Mostra la pestanya desitjada
-    }
+    document.getElementById(tabId).style.display = display;
+
 }
