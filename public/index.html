@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +12,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="css/stylesmap.css">
     <script defer src="js/menu.js"></script>
-    <script src="js/functions.js"></script>
+    <script>
+        // Leer el parámetro de consulta "success"
+        const urlParams = new URLSearchParams(window.location.search);
+        const success = urlParams.get('success');
+    
+        // Mostrar una alerta basada en el valor del parámetro
+        if (success === "true") {
+            alert("Registro exitoso.");
+        } else if (success === "false") {
+            alert("Error en el registro.");
+        }
+    </script>
 </head>
+
 <body>
     <header>
         <h1>Latamergence</h1>
@@ -46,12 +59,12 @@
             </div>
             <div class="telef">
                 <h3>Registra tu teléfono para alertas</h3>
-                <form>
+                <form action="/addNum" method="post">
                     <label for="phone">Teléfono:</label>
                     <input type="tel" id="phone" name="phone" placeholder="Ex. +34666666666" required>
                     <label for="phone">Ciudad:</label>
                     <input type="tel" id="ciutat" name="ciutat" placeholder="Ex. Caracas" required>
-                    <button type="submit" onclick="//funcio js">Enviar</button>
+                    <button type="submit">Enviar</button>
                 </form>
             </div>
         </section>
@@ -73,4 +86,5 @@
         <script src="js/script.js"></script>
     </div>
 </body>
+
 </html>

@@ -1,7 +1,7 @@
 // Coordenadas aproximadas para centrar el mapa en Latinoamérica
-const lat = -14.2350;
-const lng = -51.9253;
-const zoomLevel = 4;
+const lat = -6.170733112573795;
+const lng = -70.38501271258028;
+const zoomLevel = 3;
 
 // Inicializar el mapa
 const map = L.map('map').setView([lat, lng], zoomLevel);
