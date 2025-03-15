@@ -3,9 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Latam Weather</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <script defer src="js/menu.js"></script>
 </head>
 <body>
-    <h1>Latam Weather</h1>
+    <header>
+        <h1>Latamergence</h1>
+        <div class="menu">
+        <button onclick="showTab('weather')">Tiempo</button>
+        <button onclick="showTab('map')">Mapa</button>
+        </div>
+    </header>
+    <div class="zona-medio">
+    <section class="info">
+        <div class="alert-banner">
+            <img src="img/fire.svg" alt="Fire Icon">
+            <p>¡Alerta por incendio!</p>
+        </div>
+        <div class="weather">
+            <p>Previsión meteorológica</p>
+        </div>
+        <div>
+            <h3>Registra tu teléfono para alertas</h3>
+            <form>
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Ingrese su número de teléfono" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+    <section class="chat">
+        <div class="textchat">
+            
+        </div>
+        <input class="textuser"type="text" name="query" id="query">
+        <img src="img/avionet.png" alt="Fire Icon">
+    </section>
+    </div>
 </body>
 </html>
+
+
