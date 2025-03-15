@@ -4,7 +4,7 @@
 
 body {
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: rgb(79, 79, 79);
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -12,14 +12,19 @@ body {
 
 header {
     color: white;
-    background: #9c341d;
+    background: #ff7700;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 25px;
     height: 10%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
-    border-radius: 0 0 1em 1em;
+    border-radius: 1em 1em 1em 1em;
+    margin-right: 1.4em;
+    margin-left: 1.4em;
+    margin-top: 1em;
+    margin-bottom: 0em;
+
     position: sticky;
     z-index: 10;
 }
@@ -34,17 +39,18 @@ header .menu {
 }
 
 header .menu * {
-    color: white;
-    background-color: #9c341d;
+    color: rgb(255, 255, 255);
+    background-color: #ff7700;
     height: 90%;
     font-size: large;
     padding: 0 2em;
     font-weight: 500;
     border: none;
+    border-radius: 1em;
 }
 
 header button:hover {
-    background: #789dc1;
+    background: #ff9c3f;
 }
 
 #tiempo
@@ -58,7 +64,7 @@ header button:hover {
 }
 
 .info, .chat {
-    background-color: rgb(210, 210, 210);
+    background-color: rgba(255, 255, 255, 0.845);
     width: 65%;
     height: 95%;
     border-radius: 1em;
@@ -105,6 +111,7 @@ input{
 }
 
 .alert-banner {
+    margin: 1em 1em 2% 2%;
     display: flex;
     flex-direction: row;
     color: white;
@@ -113,7 +120,9 @@ input{
     justify-content: center;
     align-items: center;
     align-content: center;
-    width: 100%
+    width: 96%;
+    border-radius: 0.7em 0.7em 0.7em 0.7em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
 .alert-banner img {
@@ -144,7 +153,9 @@ input{
 }
 
 #phone, #ciutat{
-    height: 30px;
+    border: solid 1px;
+    border-radius: 3px;
+    height: 20px;
 }
 
 .weather {
@@ -188,4 +199,8 @@ input{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+#form{
+    gap: 20px;
 }
