@@ -2,17 +2,31 @@
     font-family: "Funnel Display", sans-serif;
 }
 
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 50% 200%;
+    }
+}
+
 body {
     margin: 0;
-    background-color: rgb(79, 79, 79);
     display: flex;
     flex-direction: column;
     height: 100vh;
+    background-color: rgb(206, 206, 206);
+    /* background-image: url('../img/fire_bg.svg');
+    background-size: 5em 5em;
+    background-repeat: repeat;
+    animation: moveBackground 100s linear infinite; */
 }
 
 header {
     color: white;
-    background: #ff7700;
+    background: #084558;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,7 +54,7 @@ header .menu {
 
 header .menu * {
     color: rgb(255, 255, 255);
-    background-color: #ff7700;
+    background-color: #084558;
     height: 90%;
     font-size: large;
     padding: 0 2em;
@@ -50,11 +64,10 @@ header .menu * {
 }
 
 header button:hover {
-    background: #ff9c3f;
+    background: #125569;
 }
 
-#tiempo
-{
+#tiempo {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -63,7 +76,8 @@ header button:hover {
     height: 90%;
 }
 
-.info, .chat {
+.info,
+.chat {
     background-color: rgba(255, 255, 255, 0.845);
     width: 65%;
     height: 95%;
@@ -78,32 +92,32 @@ header button:hover {
     width: 30%;
 }
 
-.textchat{
+.textchat {
     flex-direction: row;
     justify-content: space-evenly;
     height: 94%;
-    
+
 }
 
-.textuser{
+.textuser {
     flex: 1;
 }
 
-.barraChat{
+.barraChat {
     display: flex;
     flex-direction: row;
     width: 90%;
     height: 6%;
     padding: 5%;
     gap: 5%;
-    
+
 }
 
-.barraChat *{
+.barraChat * {
     height: 100%;
 }
 
-input{
+input {
     border-radius: 20px;
     border: solid black 2px;
     padding: 0 10px;
@@ -115,7 +129,7 @@ input{
     display: flex;
     flex-direction: row;
     color: white;
-    background-color: red;
+    background-color: #c02613;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -135,7 +149,7 @@ input{
     margin-left: 0.5em;
 }
 
-.weather{
+.weather {
     display: flex;
     flex-direction: row;
     height: 80%;
@@ -152,7 +166,8 @@ input{
     width: 100%;
 }
 
-#phone, #ciutat{
+#phone,
+#ciutat {
     border: solid 1px;
     border-radius: 3px;
     height: 20px;
@@ -201,6 +216,6 @@ input{
     justify-content: center;
 }
 
-#form{
+#form {
     gap: 20px;
 }
