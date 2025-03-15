@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="css/stylesmap.css">
     <script defer src="js/menu.js"></script>
+    <script src="js/functions.js"></script>
     <script>
         // Leer el parámetro de consulta "success"
         const urlParams = new URLSearchParams(window.location.search);
@@ -20,8 +21,10 @@
         // Mostrar una alerta basada en el valor del parámetro
         if (success === "true") {
             alert("Registro exitoso.");
+            window.location.replace('/');
         } else if (success === "false") {
             alert("Error en el registro.");
+            window.location.replace('/');
         }
     </script>
 </head>
