@@ -44,14 +44,14 @@ app.post('/addNum', (req, res) => {
             const result = resultData.trim().toLowerCase(); // Convertir a minúsculas para comparar
 
             if (result === "true") {
-                // Si la salida es "true", devolver éxito
-                if (!res.headersSent) {            
-                    res.redirect('/');
+                // Si la salida es "true", redirigir con un parámetro de éxito
+                if (!res.headersSent) {
+                    res.redirect('/?success=true');
                 }
             } else {
-                // Si la salida no es "true", devolver error
+                // Si la salida no es "true", redirigir con un parámetro de error
                 if (!res.headersSent) {
-                    res.status(400).json({ success: false, message: "Operation failed", output: result });
+                    res.redirect('/?success=false');
                 }
             }
         } catch (error) {
