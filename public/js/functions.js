@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    let alert = await fetch('/alerta');
+    //let alert = await fetch('/alerta');
     const currentTemp = document.getElementById('current-temp');
     const currentHumidity = document.getElementById('current-humidity');
     const currentPrecipitation = document.getElementById('current-precipitation');
