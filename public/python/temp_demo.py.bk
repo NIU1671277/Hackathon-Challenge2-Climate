@@ -9,8 +9,8 @@ load_dotenv()
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 FILE_PATH = './data/data.json'
 
-TWILIO_TOKEN = 'c752c9277ff876ce3bc9588a936fc2e5'
-ACCOUNT_SID = 'AC4ecc51f1cb8654f59e5bc3eec7855b76'
+TWILIO_TOKEN = '28e9413a2f3b4edaf2557070abc82063'
+ACCOUNT_SID = 'AC06d4d9f0d6187b8de53da9c56c001429'
 
 threshold = 4 # Temp diff in ºC - 6++
 hours_ahead = 2
@@ -65,7 +65,7 @@ def send_alerts(data, coords):
 
     for tel in telefs:
         message = client.messages.create(
-        from_='+13344182190',
+        from_='+16207431835',
         body='⚠️ ALERTA CALOR',
         to=tel
         )
