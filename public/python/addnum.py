@@ -40,7 +40,7 @@ if __name__ == "__main__":
         data[coordinates] = []
 
     if phone not in data[coordinates]:
-        data[coordinates].append(phone)
+        data[coordinates].append(phone.replace(' ', ''))
 
     with open(FILE_PATH, "w", encoding="utf-8") as file:
         json.dump(data, file, indent=4, ensure_ascii=False)

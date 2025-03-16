@@ -11,9 +11,66 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Here go the routing
 app.get('/tiempo', (req, res) => {
+    const pythonProcess = spawn("python", [path.join(__dirname, 'public/python/weather_api.py')])
     data = path.join(__dirname, 'data/hourly_weather_data.json');
     res.sendFile(data);
 });
+
+app.get('/tiempo/actual', (req, res) => {
+    const pythonProcess = spawn("python", [
+        path.join(__dirname, 'public/python/current_weather_api.py'),
+        req.query.latitude,
+        req.query.longitude
+    ]);
+
+    let resultData = "";
+    let errorData = "";
+
+    // Capturar la salida del script de Python
+    pythonProcess.stdout.on("data", (data) => {
+        resultData += data.toString();
+    });
+
+    // Capturar errores del script de Python
+    pythonProcess.stderr.on("data", (data) => {
+        errorData += data.toString();
+    });
+
+    // Manejar el cierre del proceso de Python
+    pythonProcess.on("close", (code) => {
+        if (code !== 0) {
+            console.error(`Python Script Error: ${errorData}`);
+            if (!res.headersSent) {
+                res.status(500).json({ error: "Python script error", details: errorData });
+            }
+            return;
+        }
+
+        if (!resultData.trim()) {
+            if (!res.headersSent) {
+                res.status(500).json({ error: "No data received from Python script" });
+            }
+            return;
+        }
+
+        try {
+            const result = JSON.parse(resultData);
+            if (!res.headersSent) {
+                res.json(result); // Enviar el JSON como respuesta
+            }
+        } catch (error) {
+            console.error(`Parsing Error: ${error.message}`);
+            console.error(`Python Output: ${resultData}`);
+            if (!res.headersSent) {
+                res.status(500).json({ error: "Failed to parse Python output", details: resultData });
+            }
+        }
+    });
+});
+
+app.get('/alerta', (req, res) => {
+    const pythonProcess = spawn("python", [path.join(__dirname, 'public/python/temp_demo.py')])
+})
 
 app.post('/addNum', (req, res) => {
     const { phone, ciutat } = req.body;

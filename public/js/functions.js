@@ -38,23 +38,25 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
 
     try {
+        const responseCurrent = await fetch('/tiempo/actual?latitude=10.4806&longitude=-66.9036');
         const response = await fetch('/tiempo');
-        if (!response.ok) {
+        if (!response.ok || !responseCurrent.ok) {
             throw new Error('Failed to fetch weather data');
         }
 
+        const currentData = await responseCurrent.json();
         const data = await response.json();
         const currentWeather = data[0];
 
         /// Añadir el icono del tiempo actual
         const currentWeatherIcon = document.getElementById('current-weather-icon');
-        currentWeatherIcon.textContent = weatherIcons[currentWeather.weather_code] || ""; // Usar "❓" si el código no está en el mapeo
+        currentWeatherIcon.textContent = weatherIcons[currentData.weather_code] || "";
 
         // Update current weather
-        currentTemp.textContent = currentWeather.temperature_2m.toFixed(1);
-        currentHumidity.textContent = currentWeather.relative_humidity_2m;
-        currentPrecipitation.textContent = currentWeather.precipitation_probability;
-        currentWind.textContent = (currentWeather.wind_speed_10m * 3.6).toFixed(1); // Convert m/s to km/h
+        currentTemp.textContent = currentData.temperature_2m.toFixed(1);
+        currentHumidity.textContent = currentData.relative_humidity_2m;
+        currentPrecipitation.textContent = currentData.precipitation;
+        currentWind.textContent = (currentData.wind_speed_10m * 3.6).toFixed(1); // Convert m/s to km/h
 
         // Update forecast
         const displayedDates = new Set();
