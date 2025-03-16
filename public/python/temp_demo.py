@@ -7,12 +7,12 @@ from twilio.rest import Client
 load_dotenv()
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-FILE_PATH = os.path.join(SCRIPT_DIR, "../data/data.json")
+FILE_PATH = './data/data.json'
 
-ACCOUNT_SID = os.getenv('ACCOUNT_SIM')
-TWILIO_TOKEN = os.getenv('TWILIO_TOKEN')
+TWILIO_TOKEN = '28e9413a2f3b4edaf2557070abc82063'
+ACCOUNT_SID = 'AC06d4d9f0d6187b8de53da9c56c001429'
 
-threshold = 6 # Temp diff in ºC
+threshold = 4 # Temp diff in ºC - 6++
 hours_ahead = 2
 
 def get_diffs(data):
@@ -81,8 +81,8 @@ if __name__ == "__main__":
     diffs = get_diffs(data)
 
     for coords, diff in diffs.items():
-        if diff>threshold:
+        if diff > threshold:
             send_alerts(data, coords)
-            print("Alertes enviades per a "+coords)
+            print("Alertes enviades per a " + coords)
 
 

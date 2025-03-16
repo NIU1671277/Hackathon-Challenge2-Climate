@@ -192,7 +192,6 @@ header button:hover {
     justify-content: center;
     align-items: center;
     align-content: center;
-    height: 20%;
     width: 100%;
 }
 
@@ -261,4 +260,15 @@ header button:hover {
 
 #form {
     gap: 20px;
+}
+
+.typing-indicator {
+    font-style: italic;
+    color: #666; /* Color gris para el indicador */
+    animation: blink 1s infinite; /* Animación de parpadeo */
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
 }

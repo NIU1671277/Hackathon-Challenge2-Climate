@@ -70,6 +70,7 @@ app.get('/tiempo/actual', (req, res) => {
 
 app.get('/alerta', (req, res) => {
     const pythonProcess = spawn("python", [path.join(__dirname, 'public/python/temp_demo.py')])
+    res.redirect('/');
 })
 
 app.post('/addNum', (req, res) => {
