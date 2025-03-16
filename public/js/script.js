@@ -353,15 +353,18 @@ const legend = L.control({ position: 'bottomright' });
 
 legend.onAdd = function (map) {
     const div = L.DomUtil.create('div', 'info legend');
-    const grades = [0, 10, 20, 30, 40];
+    const grades = [0, 15, 20, 25, 30, 40]; // Rangos de temperatura
     const labels = [];
     let from, to;
+
+    // Título de la leyenda
+    labels.push('<h4>Temperatura (°C)</h4>');
 
     for (let i = 0; i < grades.length; i++) {
         from = grades[i];
         to = grades[i + 1];
         labels.push(
-            `<i style="background:${getColor(from + 1)}"></i> ${from}${to ? `&ndash;${to}` : '+'}`
+            `<i style="background:${getColor(from + 1)}; width: 18px; height: 18px; display: inline-block; margin-right: 5px;"></i> ${from}${to ? `&ndash;${to}` : '+'}°C`
         );
     }
 
@@ -370,8 +373,8 @@ legend.onAdd = function (map) {
     div.style.backgroundColor = 'white';
     div.style.padding = '10px';
     div.style.borderRadius = '10px';
-    div.style.width = '10%';
-    div.style.textAlign = 'center';
+    div.style.width = '15%'; // Ajustar el ancho para que quepa el título
+    div.style.textAlign = 'left'; // Alinear el texto a la izquierda
     div.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.2)';
     return div;
 };
