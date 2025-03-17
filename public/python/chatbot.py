@@ -8,7 +8,7 @@ if __name__ == '__main__':
     query = sys.argv[1]
     load_dotenv()
 
-    OPEN_AI_TOKEN = '6evUUU8hO6Z13XrWLqupolcAtbxiOdCiw0LBeu2prfMuqEd33BwUJQQJ99BCACYeBjFXJ3w3AAAAACOGQmQt'
+    OPEN_AI_TOKEN = os.getenv('OPEN_AI_TOKEN')
 
     url = "https://ai-hackathonuabpayretailers082809715538.openai.azure.com/openai/deployments/gpt-4o-mini/chat/completions?api-version=2024-10-21"
 
