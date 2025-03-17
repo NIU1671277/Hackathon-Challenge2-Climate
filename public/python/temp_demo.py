@@ -9,8 +9,8 @@ load_dotenv()
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 FILE_PATH = './data/data.json'
 
-TWILIO_TOKEN = 'c752c9277ff876ce3bc9588a936fc2e5'
-ACCOUNT_SID = 'AC4ecc51f1cb8654f59e5bc3eec7855b76'
+TWILIO_TOKEN = os.getenv('TWILIO_TOKEN')
+ACCOUNT_SID = os.getenv('ACCOUNT_SID')
 
 threshold = 4 # Temp diff in ºC - 6++
 hours_ahead = 2
